@@ -1,13 +1,11 @@
-interface Pet {
+class Developer {
     name: string;
+    domain: string;
+
+    constructor(name: string, domain: string) {
+        this.name = name;
+        this.domain = domain;
+    }
 }
 
-interface Cat {
-    name: string;
-    age: number;
-}
-
-let pet: Pet;
-let cat: Cat = { name: "Tom", age: 7 };
-
-pet = cat; // OK
+const me: Developer = new Developer("John", "Web Development");
