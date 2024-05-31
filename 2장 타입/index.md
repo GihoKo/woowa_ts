@@ -86,6 +86,32 @@
     - 컴파일 타임에 타입을 검사하면서 필요에 따라 타입 선언 생략을 허용하는 방식
     - 타입 지정 → 정적 타입 검사
     - 타입 지정 X → 동적 타입 검사 → 암시적 타입 변환
+7. 자바스크립트 슈퍼셋으로서의 타입스크립트
+    - 타입스크립트는 자바스크립트 + a 인 자바스크립트의 슈퍼셋이다.
+        - 따라서 자바스크립트의 문법을 모두 포함하고 추가적인 기능을 가지고 있음
+        - 예를들어 `: sting`을 붙이는 타입 구문이나 `String.toUppercase()`를 사용할 때 컴파일 타임에 에러를 내주는 기능들
+8. 값 vs 타입
+    - 타입스크립트에서는 값과 타입이 함께 사용된다,
+        - 별도의 네임스페이승 존재하는데 값과 타입이 사용되는 위치가 다르기 때문에 타입스크립트가 값인지 타입인지 추론 가능하다.
+    - 값과 타입의 공간이 애매한 경우
+        - 클래스
+            
+            ```jsx
+            class Developer {
+                name: string;
+                domain: string;
+            
+                constructor(name: string, domain: string) {
+                    this.name = name;
+                    this.domain = domain;
+                }
+            }
+            
+            const me: Developer = new Developer("John", "Web Development");
+            ```
+            
+            - 변수명 me의 `: Developer`는 타입에 해당하고, new 키워드 뒤의 `Developer`는 클래스의 생성자 함수인 값으로 동작한다.
+            - 마찬가지로 타입 애너테이션으로 사용할 수 있지만 컴파일 단계에서 사라진다.
 
 ## 2.3 원시 타입
 
